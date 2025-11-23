@@ -71,31 +71,35 @@ if(isset($_POST["login"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>selamat datang</h1>
-    <?php if(isset($error)): ?>
-        <p style="color: red; font-style: italic;">username atau password salah</p>
-    <?php endif ?>
-    <form action="" method="post">
-        <ul>
-            <li>
-                <label name="username";>username :</label>
-                <input type="text"; name="username"; id="username";>
-            </li>
-            <li>
-                <label name="password";>password :</label>
-                <input type="password"; name="password"; id="password";>
-            </li>
-            <li>
-                <input type="checkbox"; name="remember"; id="remember";>
-                <label name="remember";>Remember Me</label>
-            </li>
-            <li>
-                <button type="submit" name="login">login</button>
-                <button type="submit" name="reg">registrasi</button>
-            </li>
-        </ul>
-    </form>
+    <div class="auth-container">
+        <h1>🎮 Selamat Datang</h1>
+        <?php if(isset($error)): ?>
+            <p class="error-message">❌ Username atau password salah</p>
+        <?php endif ?>
+        
+        <form action="" method="post">
+            <ul>
+                <li>
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username" required>
+                </li>
+                <li>
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" required>
+                </li>
+                <li class="remember-me">
+                    <input type="checkbox" name="remember" id="remember">
+                    <label for="remember" style="margin-bottom: 0;">Remember Me</label>
+                </li>
+                <li class="button-group">
+                    <button type="submit" name="login">Login</button>
+                    <button type="submit" name="reg" style="background: #4CAF50;">Registrasi</button>
+                </li>
+            </ul>
+        </form>
+    </div>
 </body>
 </html>
