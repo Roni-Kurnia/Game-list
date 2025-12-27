@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (!isset($_SESSION["login"])) {
+if (isset($_SESSION["login"])) {
     header("Location: index.php");
     exit;
 }
@@ -28,52 +28,32 @@ if (isset($_POST["register"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        body{
-            font-size: 18px;
-        }
-        .container {
-            width: 400px;
-        }
-        .penanda {
-            width: 200px;
-            float: left;
-        }
-        .penanda, label{
-            display: block;
-        }
-        .masukan  {
-            width: 190px;
-        }
-        .masukan, input {
-            float: right;
-            padding: 1.5px;
-        }
-        .tombol {
-            padding-top: 71px;  
-            left: 0;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
-    <h1>Halaman Registrasi</h1>
-    <form action="" method="post">
-        <div class="container">
-            <div class="penanda">
+    <div class="auth-container">
+        <h1>Registrasi</h1>
+        <form action="" method="post">
+        <ul>
+            <li>
                 <label name="username"; for="username">Username</label>
-                <label name="password"; for="password">Password</label>
-                <label name="password2"; for="password2">Konfirmasi Password</label>
-            </div>
-            <div class="masukan">
                 <input type="text"; name="username"; id="username";>
+            </li>
+            <li>
+                <label name="password"; for="password">Password</label>
                 <input type="password"; name="password"; id="password";>
+            </li>
+            <li>
+                <label name="password2"; for="password2">Konfirmasi Password</label>
                 <input type="password"; name="password2"; id="password2";>
-            </div>
-            <div class="tombol">
+            </li>
+            <li class="button-group">
                 <button type="submit" name="register">Register</button>
-                <button type="submit" name="in">login</button>
-            </div>
-        </div>
-    </form>
+                <button type="submit" name="in" style="background: #4CAF50;">login</button>
+            </li>
+        </ul>
+        </form>
+    </div>
 </body>
 </html>

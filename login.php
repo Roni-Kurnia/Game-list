@@ -21,7 +21,7 @@ if (isset($_SESSION["login"])) {
     exit;
 }
 
-if(isset($_POST["reg"])) {
+if(isset($_POST["regis"])) {
     header("Location: registrasi.php");
     exit;
 }
@@ -32,10 +32,10 @@ if(isset($_POST["login"])) {
 
     $result = mysqli_query($conn,"SELECT * FROM users WHERE username = '$username'");
     
-    if(empty($username && $password)){
+    if(empty($username || $password)){
         echo "<script> alert(' ada kolom yang belum diisi');</script>";
         exit;      
-    }
+    }  
 
     // menegecek pengembalian nilai baris
     if (mysqli_num_rows($result) > 0 ) {
@@ -84,11 +84,11 @@ if(isset($_POST["login"])) {
             <ul>
                 <li>
                     <label for="username">Username</label>
-                    <input type="text" name="username" id="username" required>
+                    <input type="text" name="username" id="username" >
                 </li>
                 <li>
                     <label for="password">Password</label>
-                    <input type="password" name="password" id="password" required>
+                    <input type="password" name="password" id="password" >
                 </li>
                 <li class="remember-me">
                     <input type="checkbox" name="remember" id="remember">
@@ -96,7 +96,7 @@ if(isset($_POST["login"])) {
                 </li>
                 <li class="button-group">
                     <button type="submit" name="login">Login</button>
-                    <button type="submit" name="reg" style="background: #4CAF50;">Registrasi</button>
+                    <button type="submit" name="regis" style="background: #4CAF50;">Registrasi</button>
                 </li>
             </ul>
         </form>

@@ -48,6 +48,7 @@ button, a.button {
     display: inline-block;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    
 }
 
 button:hover, a.button:hover {
@@ -187,11 +188,11 @@ a {
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s ease;
+    
 }
 
 a:hover {
     color: #764ba2;
-    text-decoration: underline;
 }
 
 td a {
